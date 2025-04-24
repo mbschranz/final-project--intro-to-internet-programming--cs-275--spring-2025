@@ -17,7 +17,7 @@ let validateHTML = () => {
 let compressHTML = () => {
     return src(`app/html/index.html`)
         .pipe(htmlCompressor({collapseWhitespace:true}))
-        .pipe(dest(`prod/html`));
+        .pipe(dest(`prod`));
 };
 
 let validateCSS = () => {
