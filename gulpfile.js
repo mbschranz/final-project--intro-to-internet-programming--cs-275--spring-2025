@@ -84,13 +84,6 @@ let serve = () => {
         .on(`change`, reload);
 };
 
-let build = () => {
-    compressHTML();
-    compressCSS();
-    transpileJSForProd();
-};
-
-//exports.default = build; does not work yet
 exports.default = serve;
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
@@ -109,6 +102,7 @@ exports.serve = series(
 exports.build = series(
     compressHTML,
     compressCSS,
-    transpileJSForProd
+    transpileJSForProd,
+    compressJS
 );
 
