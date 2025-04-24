@@ -68,8 +68,9 @@ let serve = () => {
         reloadDelay: 50,
         server: {
             baseDir: [
-                `./`,
-                `temp`
+                `temp`,
+                `app`,
+                `app/html`
             ]
         }
     });
@@ -90,6 +91,7 @@ let build = () => {
 };
 
 //exports.default = build; does not work yet
+exports.default = serve;
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
 exports.validateCSS = validateCSS;
