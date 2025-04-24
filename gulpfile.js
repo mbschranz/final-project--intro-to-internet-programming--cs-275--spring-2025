@@ -44,7 +44,7 @@ let validateJS = () => {
 };
 
 let compressJS = () => {
-    return src(`app/js/app.js`)
+    return src(`temp/js/app.js`)
         .pipe(jsCompressor())
         .pipe(dest(`prod/js`));
 };
@@ -59,7 +59,7 @@ let transpileJSForProd = () => {
     return src(`app/js/app.js`)
         .pipe(babel())
         .pipe(jsCompressor())
-        .pipe(dest(`prod/js`));
+        .pipe(dest(`temp/js`));
 };
 
 let serve = () => {
