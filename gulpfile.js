@@ -55,19 +55,13 @@ let transpileJSForDev = () => {
         .pipe(dest(`temp/js`));
 };
 
-let transpileJSForProd = () => {
-    return src(`app/js/app.js`)
-        .pipe(babel())
-        .pipe(dest(`temp/js`));
-};
-
 let serve = () => {
     browserSync({
         notify: true,
         reloadDelay: 50,
         server: {
             baseDir: [
-                `temp`,
+                `temp`, //this is here so we use the javascript that is TRANSPILED.
                 `app`,
                 `app/html`
             ]
@@ -91,16 +85,20 @@ exports.compressCSS = compressCSS;
 exports.validateJS = validateJS;
 exports.compressJS = compressJS;
 exports.transpileJSForDev = transpileJSForDev;
-exports.transpileJSForProd = transpileJSForProd;
+exports.transpileCompressJSForProd = series(
+    transpileJSForDev,
+    compressJS
+);
 exports.serve = series(
     validateHTML,
     validateCSS,
+    validateJS,
     transpileJSForDev,
     serve
 );
 exports.build = series(
     compressHTML,
     compressCSS,
-    transpileJSForProd,
+    transpileJSForDev,
     compressJS
 );
