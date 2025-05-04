@@ -1,5 +1,15 @@
-div {
-  font-family:monospace;
+body {
+  margin: 0;
+  margin-top: 16px;
+}
+
+div{
+  position: relative;
+  font-family: monospace;
+  line-height: 8.8px;
   font-size: 16px;
-  line-height: 1;
+  overflow-wrap: break-word;
+  margin: 0;
+  border: black solid 2px;
+  padding: 5px;
 }
