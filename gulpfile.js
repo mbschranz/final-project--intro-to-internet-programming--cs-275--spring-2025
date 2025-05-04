@@ -67,10 +67,10 @@ let serve = () => {
             ]
         }
     });
-    watch(`app/js/app.js`, series(jsLinter, transpileJSForDev))
+    watch(`app/js/app.js`, series(validateJS, transpileJSForDev))
         .on(`change`, reload);
 
-    watch(`app/css/style.css`, compressCSS)
+    watch(`app/css/style.css`, validateCSS)
         .on(`change`, reload);
 
     watch(`app/html/index.html`, validateHTML)
