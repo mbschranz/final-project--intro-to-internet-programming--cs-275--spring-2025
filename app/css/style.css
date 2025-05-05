@@ -3,7 +3,7 @@ body {
   margin-top: 16px;
 }
 
-div{
+div {
   position: relative;
   font-family: monospace;
   line-height: 8.8px;
@@ -11,5 +11,5 @@ div{
   overflow-wrap: break-word;
   margin: 0;
   border: black solid 2px;
-  padding: 5px;
+  padding: 6px;
 }
