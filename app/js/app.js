@@ -212,4 +212,4 @@ star.addEventListener(`click`, () => {
         setInterval(movementHandler, 10);
         isMoving = true;
     }
-  });
+});
