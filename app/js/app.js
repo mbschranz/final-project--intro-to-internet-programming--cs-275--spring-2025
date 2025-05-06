@@ -7,9 +7,9 @@ let isMoving = false;   //if the star is moving or not (so the movement handler 
 let moveLength = 5; //how far the star moves each frame
 
 window.onload = () => {
-    let validIn = false;
     starSize = prompt(`Enter a positive integer greater than 0:`);
 
+    let validIn = false;
     while(!validIn)
     {
         //check that the input is a number
@@ -20,6 +20,7 @@ window.onload = () => {
             {
                 validIn = true;
                 //check for an even diamond or an odd diamond
+                //this doesn't work for floating point values.
                 if(starSize % 2 === 0)
                 {
                     //round down and make a star of that size
