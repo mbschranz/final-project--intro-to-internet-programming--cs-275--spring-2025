@@ -66,8 +66,6 @@ let makeOddStar = (input) =>{
         //add white space again
         for(empt = 0; empt < parseInt(((starSize/2) - row)); empt++)
         {
-            console.log(empt);
-            console.log(((starSize/2) - row));
             finalStar += `&nbsp`;
         }
     }
@@ -88,8 +86,6 @@ let makeOddStar = (input) =>{
         //add white space again
         for(empt = 0; empt < parseInt(((starSize/2) - row)); empt++)
         {
-            console.log(empt);
-            console.log(((starSize/2) - row));
             finalStar += `&nbsp`;
         }
     }
@@ -212,9 +208,7 @@ star.addEventListener(`click`, () => {
         //window.getComputedStyle(star) gets the CSS from the style document. This isn't entirely necessary, but it makes it so I can
         //tweak the padding and border without having literals in the Javascript.
         width = (parseInt(star.style.width) + (2 * parseInt(starStyle.padding)) + (2 * parseInt(starStyle.borderWidth)));
-        console.log(width);
         setInterval(movementHandler, 10);
         isMoving = true;
     }
   });
-
